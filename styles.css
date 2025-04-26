@@ -11,8 +11,6 @@ body {
     min-height: 100vh;
 }
 
-
-
 body {
     background-color: #FFF2CC;
 }
@@ -21,6 +19,9 @@ main {
         background-color: #FFF2CC;
 }
 
+.contenido-principal {
+    flex: 1;
+}
 /* ESTILOS DE LA NAVBAR */
 
 .mi-navbar {
@@ -54,9 +55,14 @@ main {
 /* ESTILOS DE TITULOS */
 
 h2 {
-    color: #2F75B5;
+    color: #f5e8c1;
+    background-color: #2F75B5;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 2em;
-    padding: 20px  50px 20px 50px;
+    padding: 20px 20px 20px 60px;
+    width: 100vw;
+box-sizing: border-box;
 }
 
 h3 {
@@ -73,8 +79,28 @@ h4 {
     text-align: center;
 }
 
-/* SECCIÓN SOBRE MÍ */
+/* TABLA MATERIAS */
 
+thead.tabla-materias th {
+    background-color: #2F75B5; 
+    color: #FFF2CC ; 
+    font-size: 1.2em;
+    border-bottom: 3px solid #212529;
+
+}
+
+.contenedor-tabla {
+    justify-content: center;
+    margin: 0;
+    padding: 10px 50px 10px 50px;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* SECCIÓN SOBRE MÍ */
 
 .contenedor-sobremi {
     display: flex;
@@ -102,49 +128,66 @@ h4 {
 .tareas-pendientes {
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  
+    align-items: center; 
+}
 
 .tareas-pendientes li {
     color: #212529;
     font-size: 1.4em;
+    text-align: left;
 }
 
-.lista-tareas {
-    padding-bottom: 80px;
+.materia {
+    background-color: #2F75B5;
+    border-radius: 10px;
+    margin: 20px;
+    width: 25%;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
+
+.materia h4{
+    color: #f5e8c1;
+    text-align: left;
+}
+
 
 /* SECCIÓN MATERIAS 2025 */
 
-thead.tabla-materias th {
-    background-color: #2F75B5; 
-    color: #FFF2CC ; 
-    font-size: 1.2em;
-    border-bottom: 3px solid #212529;
-}
 
-.contenedor-tabla {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 10px 50px 10px 50px;
-}
 
 .materias-listado {
-    padding: 20px;
-    line-height: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    color: #f5e8c1;
+    font-size: 1.7em;
+    flex-wrap: wrap; 
+}
+
+.materias-listado li {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    width: 80%; 
+    max-width: 400px; 
+    text-align: center;
+    background-color: #2F75B5;
+    font-weight: 500;
+    margin: 20px auto;
+    padding: 15px;
+    line-height: 35px;
+    border-radius: 10px;
 }
 
 .materias-listado a {
     text-decoration: none;
-    color: #2F75B5;
+    color: #f5e8c1;
+    font-weight: 500;
 }
 
-ul .materias-listado{
-    list-style-type: none;
-    padding-left: 0;
-}
 
 /* SECCIÓN CONTACTO */
 
@@ -161,7 +204,7 @@ ul .materias-listado{
 }
 
 input {
-    width: 50%;
+    width: 35%;
     background-color: #f5e8c1;
     padding: 5px;
     box-sizing: border-box;
@@ -174,7 +217,7 @@ input {
 
 .boton {
     background-color: #2F75B5;
-    width: 25%;
+    width: 50%;
     color: #f5e8c1;
     font-weight: bold;
     text-transform: uppercase;
@@ -188,7 +231,7 @@ input {
 }
 
 textarea {
-    width: 75%;
+    width: 50%;
     height: 250px;
     background-color: #f5e8c1;
     padding: 5px;
@@ -280,15 +323,80 @@ footer {
 
 @media (max-width: 768px) {
     .contenido-principal {
-      padding: 10px;
+      padding: 10px 0px 10px 0px;
     }
   
     .contenedor-tabla {
       overflow-x: auto;
     }
   
+    .table td, .table th {
+        padding: 12px 8px; /* Más espacio interno */
+        font-size: 0.9em;  /* Letra apenas más chica */
+        border: 1px solid #ccc; /* Bordes grises suaves */
+      }
+  
+      .table {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .contenedor-tabla {
+        padding: 5px;
+    }
+
     footer {
       text-align: center;
       font-size: 14px;
     }
-  }
+
+
+  .materia {
+    width: 90%;
+}
+    .materias-listado {
+        flex-direction: column;
+    }
+
+    .materias-listado li {
+        width: 90%; 
+        margin: 10px auto; 
+    }
+
+    .contenedor-cajas {
+        max-width: 90%;
+        justify-content: center;
+    }
+
+    .izquierda, .derecha {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.boton {
+    width: 90%;
+}
+
+
+textarea {
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+.formulario-contacto {
+    padding: 0px 0px 10px 25px;
+    margin: 10px auto;
+}
+
+
+
+}
